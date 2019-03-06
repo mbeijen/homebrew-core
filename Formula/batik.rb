@@ -8,9 +8,9 @@ class Batik < Formula
 
   def install
     libexec.install "lib", Dir["*.jar"]
-    bin.write_jar_script libexec/"batik-rasterizer-#{version}.jar", "batik-rasterizer"
-    bin.write_jar_script libexec/"batik-#{version}.jar", "batik"
-    bin.write_jar_script libexec/"batik-ttf2svg-#{version}.jar", "batik-ttf2svg"
+    bin.write_jar_script libexec/"batik-rasterizer-#{version}.jar", "batik-rasterizer", "-Djava.awt.headless=true"
+    bin.write_jar_script libexec/"batik-#{version}.jar", "batik", "-Djava.awt.headless=true"
+    bin.write_jar_script libexec/"batik-ttf2svg-#{version}.jar", "batik-ttf2svg", "-Djava.awt.headless=true"
   end
 
   test do
